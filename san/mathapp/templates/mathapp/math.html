@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <style>
+        .Calculate {
+            width: 30%;
+            padding: 20px;
+            margin: auto;
+            background-color: rgb(25, 141, 180);
+            text-align: center;
+            border-radius:20px;
+        }
+        label {
+            font-size: 20px;
+        }
+        p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            background-color:rgb(129, 137, 14);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculating Power of a Lamp</h1>
+    <div class="Calculate">
+        <form action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+            <label>Intensity:</label><br>
+            <input type="text" name="intensity-input"><br>
+
+            <label>Resistance:</label><br>
+            <input type="text" name="resistance-input"><br>
+
+            <button type="submit">Calculate</button>
+
+            <p>The power of the lamp is: {{ output }}</p>
+        </form>
+    </div>
+</body>
+</html>
