@@ -32,9 +32,9 @@ Create a HTML file to implement form based input and output.
 Publish the website in the given URL.
 
 ## PROGRAM :
-'''
-math.html :
 
+math.html :
+```
 <html lang="en">
 <head>
     <style>
@@ -89,9 +89,9 @@ math.html :
     </div>
 </body>
 </html>
-
+```
 views.py
-
+```
 from django.shortcuts import render
 def power(request):
     if request.method=='POST':
@@ -100,9 +100,9 @@ def power(request):
         power = (intesity_value ** 2) * resistance_value
         return render(request, 'mathapp/math.html',{'output':power})
     return render (request, 'mathapp/math.html')
-
+```
 urls.py:
-
+```
 from django.contrib import admin
 from django.urls import path
 from mathapp import views
@@ -111,7 +111,7 @@ urlpatterns = [
     #path("admin/", admin.site.urls),
     path('',views.power,name='home')
 ]
-'''
+```
 ## SERVER SIDE PROCESSING:
 
 ![alt text](<Screenshot 2025-10-23 135110.png>)
